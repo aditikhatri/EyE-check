@@ -62,12 +62,12 @@ we utilized transfer learning, oversampling, and progressive resizing on this sm
 > 
 > Then loaded the dataset into the ImageItemList class provided by `fastai` .
 > 
-> The fastai library also implements various transforms for data augmentation to improve training.While there are some defaults that I leave intact we add vertical flipping >(do_flip=True) and 360 deg. max_rotate=360 as those >have been commonly used for this particular problem.
+> The fastai library also implements various transforms for data augmentation to improve training.While there are some defaults that I leave intact we add vertical flipping >(do_flip=True) and 360 deg. max_rotate=360 as those have been commonly used for this particular problem.
 
 ## Training
 >Cohen's quadratically weighted kappa  is a better metric when dealing with imbalanced datasets like this one, and for measuring inter-rater agreement for categorical >classification (the raters being the human-labeled dataset and the neural network predictions).
 >
-> Implementation is based on the scikit-learn's implementation, but converted to >a pytorch tensor, as that is what fastai uses.
+> Implementation is based on the scikit-learn's implementation, but converted to a pytorch tensor, as that is what fastai uses.
 > 
 >We use transfer learning, where we retrain the last layers of a pretrained neural network. also used the **ResNet50** architecture trained on the ImageNet dataset, which has >been commonly used for pre-training applications in computer vision. Fastai makes it quite simple to create a model and train
 
