@@ -99,6 +99,9 @@ Quite impressively, with only 1000 images, oversampling, and transfer learning, 
 >
 >Utilize rectangular images instead of cropping. Most of the data has an aspect ratio of ~1.5, and by default, the fastai library center-crops squares to pass into the network. >Also for this dataset, it may not provide significant advantage as the circular retinal images are already padded, and cropping them removes much of the padding.
 
+## Presentation 
+> View presenatation [here](https://docs.google.com/presentation/d/1sgCGra7HK2pszVu64QBoCxt7Ma-J4m4-eHe3MAI1lDQ/edit#slide=id.p4)
+
 ## References
 
 - [Diabetic retinopathy Information](https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/diabetic-retinopathy)
