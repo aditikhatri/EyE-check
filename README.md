@@ -5,6 +5,9 @@
 > blindness. Diabetic retinopathy affects up to 80 percent of those who have had diabetes for 20 years or more. Diabetic retinopathy often has no early warning signs. Retinal 
 > (fundus) photography with manual interpretation is a widely accepted screening tool for diabetic retinopathy, with performance that can exceed that of in-person dilated eye 
 > examinations.
+<p align = "center">
+<img align="center" src="eye.png" alt="Retinopathy GIF" height="200" width="400"/>
+</p>
 
 The below figure shows an example of a healthy patient and a patient with diabetic retinopathy as viewed by fundus photography
 
@@ -29,7 +32,7 @@ The below figure shows an example of a healthy patient and a patient with diabet
 8. [References](#references)
 
 ## Data 
->The data originates from  [here](https://www.kaggle.com/c/diabetic-retinopathy-detection/data). 
+>The data originates from [here](https://www.kaggle.com/c/diabetic-retinopathy-detection/data). 
 >
 >All images are taken of different people, using different cameras, and of different sizes.
 >
@@ -62,7 +65,7 @@ we utilized transfer learning, oversampling, and progressive resizing on this sm
 > 
 > Then loaded the dataset into the ImageItemList class provided by `fastai` .
 > 
-> The fastai library also implements various transforms for data augmentation to improve training.While there are some defaults that I leave intact we add vertical flipping >(do_flip=True) and 360 deg. max_rotate=360 as those have been commonly used for this particular problem.
+> The fastai library also implements various transforms for data augmentation to improve training.While there are some defaults that I leave intact we add vertical flipping (do_flip=True) and 360 deg. max_rotate=360 as those have been commonly used for this particular problem.
 
 ## Training
 >Cohen's quadratically weighted kappa  is a better metric when dealing with imbalanced datasets like this one, and for measuring inter-rater agreement for categorical >classification (the raters being the human-labeled dataset and the neural network predictions).
