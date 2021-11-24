@@ -58,7 +58,8 @@ we utilized transfer learning, oversampling, and progressive resizing on this sm
 >3 - Severe
 >
 >4 - Proliferative DR
->
+
+
 
 ## Preprocessing
 > The images were actually quite big. We  resize to a much smaller size and try to use progressive resizing to our advantage when dealing with such a small dataset.  
