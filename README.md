@@ -9,7 +9,8 @@
 <img align="center" src="eye.png" alt="Retinopathy GIF" height="200" width="400"/>
 </p>
 
-The below figure shows an example of a healthy patient and a patient with diabetic retinopathy as viewed by fundus photography
+The below figure shows an example of a healthy patient and a patient with diabetic retinopathy as viewed by fundus photography:
+
 
 <p align = "center">
 <img align="center" src="https://user-images.githubusercontent.com/63184114/142764783-d787759a-6e19-4543-bf4c-6bc115e00c28.png" alt="Retinopathy GIF"/>
@@ -17,9 +18,10 @@ The below figure shows an example of a healthy patient and a patient with diabet
 
 ### The motivations for this project are twofold:
 
-- Image classification has been a personal interest for years, in addition to classification on a large scale data set.
+- Image classification has been a personal interest for years, in addition to classification on a large scale data set
 
-- Time is lost between patients getting their eyes scanned (shown below), having their images analyzed by doctors, and scheduling a follow-up appointment. By processing images in real-time, EyeNet would allow people to seek & schedule treatment the same day.
+- Time is lost between patients getting their eyes scanned (shown below), having their images analyzed by doctors, and scheduling a follow-up appointment. By processing images in real-time, EyeNet would allow people to seek & schedule treatment the same day
+
 ## Table of content
 
 1. [Data](#data)
@@ -64,20 +66,20 @@ we utilized transfer learning, oversampling, and progressive resizing on this sm
 ## Preprocessing
 > The images were actually quite big. We  resize to a much smaller size and try to use progressive resizing to our advantage when dealing with such a small dataset.  
 > 
-> Then loaded the dataset into the ImageItemList class provided by `fastai` .
+> Then loaded the dataset into the ImageItemList class provided by `fastai`.
 > 
-> The fastai library also implements various transforms for data augmentation to improve training.While there are some defaults that I leave intact we add vertical flipping (do_flip=True) and 360 deg. max_rotate=360 as those have been commonly used for this particular problem.
+> The fastai library also implements various transforms for data augmentation to improve training. While there are some defaults that I leave intact we add vertical flipping (do_flip=True) and 360 deg. max_rotate=360 as those have been commonly used for this particular problem.
 
 ## Training
 >Cohen's quadratically weighted kappa  is a better metric when dealing with imbalanced datasets like this one, and for measuring inter-rater agreement for categorical >classification (the raters being the human-labeled dataset and the neural network predictions).
 >
 > Implementation is based on the scikit-learn's implementation, but converted to a pytorch tensor, as that is what fastai uses.
 > 
->We use transfer learning, where we retrain the last layers of a pretrained neural network. also used the **ResNet50** architecture trained on the ImageNet dataset, which has >been commonly used for pre-training applications in computer vision. Fastai makes it quite simple to create a model and train
+>We use transfer learning, where we retrain the last layers of a pretrained neural network. Also used the **ResNet50** architecture trained on the ImageNet dataset, which has >been commonly used for pre-training applications in computer vision. Fastai makes it quite simple to create a model and train.
 
 
 ## Resizing
->Progressive resizing is a technique developed by Jeremy Howard as part of the fast.ai class . The idea is that we train with smaller images at the beginning, and retrain with larger images, which will have more information to learn from.
+>Progressive resizing is a technique developed by Jeremy Howard as part of the fast.ai class. The idea is that we train with smaller images at the beginning, and retrain with larger images, which will have more information to learn from.
 >
 > This could be very helpful for dealing with small datasets, and we decided to give this a try. we only resized once due to kernel time limitations, but theoretically, we could continue to resize and see if that improves accuracy, especially since the retinal images are so big in size.
 
